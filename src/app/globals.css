@@ -180,7 +180,10 @@ span {
 }
 
 .img-about img {
-  width: 30vw;
+  width: 500px; /* Ajusta el tamaño según tu preferencia */
+  height: 500px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .aboutMe {
@@ -197,7 +200,7 @@ span {
 
 .aboutMe-content h2 {
   text-align: left;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 .aboutMe-content h3 {
@@ -210,7 +213,7 @@ span {
 }
 
 .aboutMe-content p {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin: 2rem 1rem 3rem;
 }
 

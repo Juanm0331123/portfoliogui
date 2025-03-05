@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 export const Hero: React.FC = () => {
   return (
     <section className="home" id="home">
-      <div className="home-content">
+      <div className="home-content" data-aos="fade-up">
         <h1>Hi, I&apos;m Juan Miguel</h1>
         <div className="change-text">
           <h3>And I&apos;m a&nbsp;</h3>
@@ -25,7 +25,7 @@ export const Hero: React.FC = () => {
           the lookout for opportunities to learn and enhance my skills.
           Programming is my true passion!
         </p>
-        <div className="social-media">
+        <div className="social-media" data-aos="fade-up">
           <a href="#">
             <FaFacebook size={20} />
           </a>
@@ -39,11 +39,11 @@ export const Hero: React.FC = () => {
             <FaInstagram size={20} />
           </a>
         </div>
-        <a href="#" className="btn">
+        <a href="#" className="btn" data-aos="fade-up">
           Hire Me
         </a>
       </div>
-      <div className="home-img">
+      <div className="home-img" data-aos="fade-up">
         <Image
           src="/images/Programming-amico.svg"
           alt="Programming illustration"
