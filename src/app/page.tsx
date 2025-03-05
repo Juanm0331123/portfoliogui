@@ -7,14 +7,14 @@ import Hero from "@/sections/Hero";
 import Script from "next/script";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Projects } from "@/sections/Projects";
 
 export default function HomePage() {
   useEffect(() => {
-    // Inicializar AOS
     AOS.init({
-      duration: 1000, // Duración de la animación en milisegundos
-      easing: "ease-in-out", // Tipo de animación
-      once: true, // Si la animación debe ocurrir solo una vez
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
     });
 
     // Cargar partículas solo en el cliente
@@ -37,6 +37,7 @@ export default function HomePage() {
       <Header />
       <Hero />
       <Aboutme />
+      <Projects />
 
       <Script src="/js/script.js" strategy="lazyOnload" />
       <Script

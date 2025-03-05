@@ -29,7 +29,7 @@
 
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Para evitar scroll horizontal en móviles */
 }
 
 body {
@@ -37,7 +37,8 @@ body {
   color: var(--text-color);
   position: relative;
   z-index: 99;
-  overflow: hidden;
+  /* Quita overflow: hidden; para evitar problemas de scroll en pantallas pequeñas */
+  /* overflow: hidden; */
 }
 
 section {
@@ -81,20 +82,20 @@ section {
   color: var(--main-color);
 }
 
-.home-img img {
-  width: 33vw;
-}
-
+/* ------------------- HOME ------------------- */
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.home-img img {
+  width: 33vw;
+}
+
 .home-content h1 {
   font-size: 4.8rem;
   font-weight: 700;
-  /* controlar la altura de línea dentro de un bloque de texto */
   line-height: 1.3;
 }
 
@@ -179,6 +180,7 @@ span {
   box-shadow: 0 0 1rem var(--main-color);
 }
 
+/* ------------------- ABOUT ME ------------------- */
 .img-about img {
   width: 500px; /* Ajusta el tamaño según tu preferencia */
   height: 500px;
@@ -236,6 +238,7 @@ span {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+/* ------------------- PORTFOLIO ------------------- */
 .portfolio h2 {
   margin-bottom: 4rem;
 }
@@ -310,6 +313,7 @@ span {
   color: var(--second-bg-color);
 }
 
+/* ------------------- SERVICES (CARDS) ------------------- */
 .services {
   position: relative;
   height: 100%;
@@ -318,6 +322,25 @@ span {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.card {
+  position: relative;
+  background: var(--second-bg-color);
+  box-shadow: 0 0 0.4rem var(--main-color);
+  border: 3px solid var(--main-color);
+  border-radius: 20px;
+  width: 280px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--main-color);
+  clip-path: circle(55% at 0 0);
+  border-top-left-radius: 10px;
 }
 
 .card .image {
@@ -333,25 +356,6 @@ span {
   object-fit: cover;
   border: 3px solid #000;
 }
-
-.card {
-  position: relative;
-  background: var(--second-bg-color);
-  box-shadow: 0 0 0.4rem var(--main-color);
-  border: 3px solid var(--main-color);
-  border-radius: 20px;
-  width: 280px;
-}
-
-/* .card::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #0ef;
-  clip-path: circle(55% at 0 0);
-  border-top-left-radius: 10px;
-} */
 
 .card .card-content {
   position: relative;
@@ -369,10 +373,6 @@ span {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.container {
-  margin-top: 25px;
 }
 
 .card .social-media i {
@@ -405,16 +405,6 @@ span {
   font-size: 15px;
   font-weight: 500;
   color: var(--text-color);
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--main-color);
-  clip-path: circle(55% at 0 0);
-  border-top-left-radius: 10px;
 }
 
 .card-content .rating {
@@ -453,6 +443,7 @@ span {
   background: #fff;
 }
 
+/* ------------------- SWIPER ------------------- */
 .swiper {
   width: 960px;
 }
@@ -460,4 +451,162 @@ span {
 .swiper-button-next,
 .swiper-button-prev {
   color: #0ef;
+}
+
+/* -------------------------------------------------- */
+/*         MEDIA QUERIES PARA RESPONSIVIDAD           */
+/* -------------------------------------------------- */
+
+/* ====== Dispositivos medianos (tablets, aprox ≤ 992px) ====== */
+@media (max-width: 992px) {
+  section {
+    padding: 8rem 5%;
+  }
+
+  .header {
+    padding: 2rem 5%;
+  }
+
+  .home-img img {
+    width: 50vw;
+  }
+
+  .home-content h1 {
+    font-size: 3.6rem;
+  }
+
+  .change-text {
+    font-size: 2.2rem;
+  }
+
+  .home-content p {
+    font-size: 1.6rem;
+  }
+
+  .aboutMe-content p {
+    font-size: 1.6rem;
+  }
+
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .swiper {
+    width: 100%;
+  }
+}
+
+/* ====== Dispositivos pequeños (phones, aprox ≤ 768px) ====== */
+@media (max-width: 768px) {
+  section {
+    padding: 6rem 5%;
+  }
+
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .home-img {
+    margin-bottom: 3rem;
+  }
+
+  .home-img img {
+    width: 70vw;
+  }
+
+  .home-content h1 {
+    font-size: 3rem;
+  }
+
+  .change-text {
+    font-size: 2rem;
+  }
+
+  .home-content p {
+    font-size: 1.4rem;
+    padding-right: 0;
+  }
+
+  .social-media {
+    justify-content: center;
+  }
+
+  .aboutMe {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .img-about img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .heading {
+    font-size: 3.6rem;
+  }
+
+  .aboutMe-content h3 {
+    font-size: 2rem;
+  }
+
+  .aboutMe-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+  }
+
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====== Dispositivos muy pequeños (aprox ≤ 480px) ====== */
+@media (max-width: 480px) {
+  section {
+    padding: 5rem 2rem;
+  }
+
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .nav-bar a {
+    margin-left: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .home-content h1 {
+    font-size: 2.6rem;
+  }
+
+  .change-text {
+    font-size: 1.8rem;
+  }
+
+  .aboutMe-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .img-about img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .aboutMe-content p {
+    font-size: 1.4rem;
+  }
+
+  .portfolio-layer h4 {
+    font-size: 2rem;
+  }
+
+  .portfolio-layer a {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .portfolio p {
+    font-size: 1.4rem;
+  }
 }

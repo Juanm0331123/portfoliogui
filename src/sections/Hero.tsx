@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
           <a href="#">
             <FaYoutube size={20} />
           </a>
-          <a href="#">
+          <a href="www.linkedin.com/in/juanmigueldev">
             <FaLinkedin size={20} />
           </a>
           <a href="#">
