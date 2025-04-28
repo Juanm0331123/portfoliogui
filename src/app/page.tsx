@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
 import { Aboutme } from "@/sections/Aboutme";
 import { Header } from "@/sections/Header";
 import Hero from "@/sections/Hero";
-import Script from "next/script";
+import { Projects } from "@/sections/Projects";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Projects } from "@/sections/Projects";
+import Script from "next/script";
+import { useEffect } from "react";
 
 export default function HomePage() {
   useEffect(() => {
